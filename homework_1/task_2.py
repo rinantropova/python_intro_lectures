@@ -17,7 +17,9 @@ sum = 60
 def find_cranes(n):
     x = n // 6
     kat = 2 * (x + x)
-    return f"{x} {kat} {x}"
+    return x, kat, x
+    # return f"{x} {kat} {x}"
+
 
 
 res = find_cranes(sum)

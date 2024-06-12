@@ -8,8 +8,7 @@
 # Fibonacci sequence:0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144,...
 
 fib_seq = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
-print('Enter positive number bigger than 1: ')
-a = int(input())
+a = int(input('Enter positive number bigger than 1: '))
 
 if a <= 1:
     print('Incorrect number!')

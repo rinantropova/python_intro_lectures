@@ -8,8 +8,7 @@
 
 import random
 
-print('Enter positive number: ')
-number = int(input())
+number = int(input('Enter positive number: '))
 
 
 def weights_list(length, min_value, max_value):

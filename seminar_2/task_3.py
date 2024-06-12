@@ -11,8 +11,7 @@
 
 import random
 
-print('Enter amount of days for observation (from 1 to 100): ')
-days = int(input())
+days = int(input('Enter amount of days for observation (from 1 to 100): '))
 
 if 1 > days > 1000:
     print('Incorrect value')

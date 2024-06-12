@@ -5,8 +5,7 @@
 # Input: 5
 # Output: 120
 
-print('Enter positive number: ')
-n = int(input())
+n = int(input('Enter positive number: '))
 
 
 # def factorial(num):

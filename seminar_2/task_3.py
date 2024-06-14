@@ -9,6 +9,7 @@
 # Input: 6 -> -20 30 -40 50 10 -10
 # Output: 2
 
+# My solution:
 import random
 
 days = int(input('Enter amount of days for observation (from 1 to 100): '))
@@ -35,3 +36,17 @@ for i in mean_temp:
 print(pos_count)
 
 
+# Seminar solution:
+temps = "-20 30 -40 50 10 -10".split()
+# list of strings
+warm_length = 0
+max_length = 0
+for elem in temps:
+    num = int(elem)
+    if num > 0:
+        warm_length += 1
+    else:
+        warm_length = 0
+    if warm_length > max_length:
+        max_length = warm_length
+print(max_length)

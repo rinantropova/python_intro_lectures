@@ -19,13 +19,14 @@ def coins_list(length, min_value, max_value):
 coins = coins_list(n, 0, 1)
 print(coins)
 
+# coins = [1, 1, 1, 1, 0]
 count_tails = 0
 count_heads = 0
-for i in range(len(coins)):
-    if coins[i] == 0:
-        count_heads += 1
-    else:
+for i in coins:
+    if i == 1:
         count_tails += 1
+    else:
+        count_heads += 1
 
 if count_tails > count_heads:
     print(count_heads)

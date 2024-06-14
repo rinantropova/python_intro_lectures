@@ -10,18 +10,18 @@ s = int(input('Enter sum of 2 hidden numbers: '))
 p = int(input('Enter product of 2 hidden numbers: '))
 
 
-def fins_nums(sum_value, product_value):
+def find_nums(sum_value, product_value):
     discriminant = sum_value ** 2 - 4 * product_value
     if discriminant < 0:
         return None
-    x_1 = (sum_value + discriminant ** 0.5) / 2
-    x_2 = (sum_value - discriminant ** 0.5) / 2
-    return x_1, x_2
+    x_1 = (sum_value + discriminant ** 0.5) // 2
+    x_2 = (sum_value - discriminant ** 0.5) // 2
+    return f'{int(x_2)} {int(x_1)}'
 
 
-result = fins_nums(s, p)
+result = find_nums(s, p)
 if result:
-    x, y = result
-    print(x, y)
+
+    print(result)
 else:
     print("No real solutions exist")

@@ -9,7 +9,7 @@
 
 # 1:
 new_dict = [{"V": "S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII": "S005"}, {" V ": "S009"},
-        {" VIII": " S007 "}]
+        {" VIII": "S007"}]
 unique_values = {val for dic in new_dict for val in dic.values()}
 print(unique_values)
 
@@ -29,3 +29,14 @@ print(unique_values)
 #
 # unique_values = set(val for values_set in unique_values_dict.values() for val in values_set)
 # print(unique_values)
+
+# Seminar solution:
+unique = set()
+for item in new_dict:
+        for value in item.values():
+                unique.add(value)
+print(unique)
+
+
+# Seminar solution with comprehension:
+print(set(value for item in new_dict for value in item.values()))

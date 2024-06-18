@@ -30,7 +30,7 @@ print(unique_values)
 # unique_values = set(val for values_set in unique_values_dict.values() for val in values_set)
 # print(unique_values)
 
-# Seminar solution:
+# Seminar solution (traditional iterator with method add()):
 unique = set()
 for item in new_dict:
         for value in item.values():
@@ -38,5 +38,5 @@ for item in new_dict:
 print(unique)
 
 
-# Seminar solution with comprehension:
+# Seminar solution with set comprehension:
 print(set(value for item in new_dict for value in item.values()))

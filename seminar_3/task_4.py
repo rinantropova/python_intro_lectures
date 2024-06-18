@@ -22,4 +22,13 @@ for i in range(1, len(numbers)):
 print(count)
 
 
+# Seminar solution:
+my_list = [0, -1, 5, 2, 3]
+counter = 0
+for i in range(1, len(my_list)):
+    if my_list[i] > my_list[i - 1]:
+        counter += 1
+
+print(counter)
+
 

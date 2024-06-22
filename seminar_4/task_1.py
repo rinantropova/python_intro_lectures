@@ -42,3 +42,7 @@ for item in new_str:
 print(new_list)
 
 
+# Seminar solution:
+
+
+

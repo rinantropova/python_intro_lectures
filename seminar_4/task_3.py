@@ -41,3 +41,13 @@ for i in range(0, len(seq) - 1):
     if seq[i] > max_el:
         max_el = seq[i]
 print(max_el)
+
+
+# Seminar's:
+n = int(input())
+max_number = n
+while n != 0:
+    n = int(input())
+    if max_number < n:
+        max_number = n
+print(max_number)

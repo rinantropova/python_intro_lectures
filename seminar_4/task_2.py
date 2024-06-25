@@ -21,3 +21,10 @@ unique_words = len(set(words))
 print(set(words))
 print(unique_words)
 # print(len(set(my_list)))
+
+
+# Sem sol:
+twister = """She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure.So if she sells 
+sea shells on the sea shore I'm sure that the shells are sea shore shells""".lower()
+
+print(len(set(twister.split())))

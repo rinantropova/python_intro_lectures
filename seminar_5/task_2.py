@@ -37,3 +37,30 @@ def replace_grades_recur(grades, max_grade=None, min_grade=1):
 
 
 print(*replace_grades_recur(initial_grades))
+
+# Seminar's solution:
+min_grade = min(initial_grades)
+max_grade = max(initial_grades)
+new_grades = []
+for grade in initial_grades:
+    if grade == max_grade:
+        new_grades.append(min_grade)
+    else:
+        new_grades.append(grade)
+print(*new_grades)
+
+# Comprehension:
+print([min_grade if grade == max_grade else grade for grade in initial_grades])
+
+
+#Recursion
+def update_grades(initial_grades, grades2=[], min_grade = min(initial_grades), max_grade = max(initial_grades)):
+    if len(initial_grades) == 0:
+        return grades2
+    if initial_grades[0] == max_grade:
+        grades2.append(min_grade)
+    else:
+        grades2.append(initial_grades[0])
+    return update_grades(initial_grades[1:], grades2)
+
+print(update_grades(initial_grades))

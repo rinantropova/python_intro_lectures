@@ -8,7 +8,21 @@
 
 number = int(input('Enter a number: '))
 
-if number % 1 == 0 and number % number == 0:
-    print('Yes')
-else:
-    print('No')
+def find_prime_num(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return 'No'
+    return 'Yes'
+
+
+print(find_prime_num(number))
+
+# recursion:
+def find_prime_num2(n, i=2):
+    if i < n:
+        if n % i == 0:
+            return 'No'
+        return find_prime_num2(n, i+1)
+    return 'Yes'
+
+print(find_prime_num2(number))

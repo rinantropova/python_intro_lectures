@@ -28,7 +28,7 @@ print(find_num(7))
 a = 7
 fibo_p, fibo_n = 0, 1
 for i in range(0, a):
-    fibo_p, fibo_n = fibo_n, fibo_p + fibo_n
+    fibo_p, fibo_n = fibo_n, fibo_p + fibo_n  # will be the recursion's step
 print(f'{a}th number = {fibo_n}')
 
 
@@ -37,6 +37,6 @@ def fibo_find(n, prev=0, nex=1):  # everything before the cycle is the arguments
     if n == 0:
         return nex
     # step of recursion:
-    return fibo_find(n - 1, prev=nex, nex=prev + nex)
+    return fibo_find(n - 1, nex, prev + nex)
 
 print(fibo_find(a))

@@ -27,8 +27,8 @@
 
 
 var1 = '5 5'
-var2 = '10 20 30 40 50'
-var3 = '10 20 30 40 50'
+var2 = '10 20 30 40 50 60 70 80 90 100'
+var3 = '10 20 30 40 50 60 70 80 90 100'
 converted_1 = var2.split()
 list_1 = [int(num) for num in converted_1]
 print(set(list_1))
@@ -40,12 +40,24 @@ print(set(list_2))
 duplicates = list(set(list_1) & set(list_2))
 print(duplicates[0])
 print(duplicates[len(duplicates)-1])
-for i in range(0, len(duplicates)-1):
-    for j in range(i, len(duplicates) - 1):
-        if duplicates[j] > duplicates[j+1]:
-            temp = duplicates[j]
-            duplicates[j] = duplicates[j+1]
-            duplicates[j+1] = temp
-            print(duplicates)
+# for i in range(0, len(duplicates)-1):
+#     for j in range(i, len(duplicates) - 1):
+#         if duplicates[j] > duplicates[j+1]:
+#             temp = duplicates[j]
+#             duplicates[j] = duplicates[j+1]
+#             duplicates[j+1] = temp
+#             print(duplicates)
 
+count = 0
+for i in range(0, len(duplicates) - 1):
+    for j in range(0, len(duplicates) - i - 1):
+        count += 1
+        if duplicates[j] < duplicates[j + 1]:
+            temp = duplicates[j]
+            duplicates[j] = duplicates[j + 1]
+            duplicates[j + 1] = temp
+
+    # print(duplicates)
+print(count)
 print(duplicates)
+

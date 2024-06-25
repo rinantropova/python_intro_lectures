@@ -7,3 +7,5 @@ list_1 = []
 for i in range(1, 10):
     list_1.append(fib(i))
 print(list_1)
+
+print(fib(7))

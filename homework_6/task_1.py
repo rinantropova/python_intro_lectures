@@ -20,3 +20,17 @@ def arith_progression(a, d, n, new_list=[]):
 
 progression = arith_progression(a1, d, n)
 print(progression)
+
+
+# recursion:
+def progression_rec(first_el, diff, num, new_list=None):
+    if new_list is None:
+        new_list = []
+    if num == 0:
+        return new_list
+    else:
+        new_value = first_el + (num - 1) * diff
+        new_list.insert(0, new_value)
+    return progression_rec(first_el, diff, num - 1, new_list)
+
+print(progression_rec(a1, d, n))

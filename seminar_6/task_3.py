@@ -8,6 +8,14 @@
 # Ввод:             Вывод:
 # 1 2 3 2 3         2
 
-my_list = input('Add list of numbers: ').split()
-print(sum(my_list.count(x) - 1 for x in my_list) // 2)
+# my_list = input('Add list of numbers: ').split()
+# print(sum(my_list.count(x) - 1 for x in my_list) // 2)
 
+lst = [1, 2, 3, 2, 3, 3, 3, 3]
+my_set = set(lst)
+
+res = []
+for elem in my_set:
+    res.append(lst.count(elem) // 2)
+
+print(sum(res))

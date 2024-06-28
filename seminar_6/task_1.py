@@ -25,6 +25,11 @@ second_list = [4, 15, 43, 1, 15, 1]
 #     second_list.append(number)
 # print(second_list)
 
+# fourth_list = list(map(int, input('Enter numbers with a space between: ').split()))
+# print(fourth_list)
+
+
+
 def find_missing(a, b):
     seen_elements = set(b)
     result = [elem for elem in a if elem not in seen_elements]
@@ -33,4 +38,25 @@ def find_missing(a, b):
 
 missing_elements = find_missing(first_list, second_list)
 print(missing_elements)
+
+
+third_list = [elem for elem in first_list if elem not in second_list]
+print(third_list)
+
+
+res = filter(lambda elem: elem not in second_list, first_list)
+print(', '.join(str(elem) for elem in res))
+
+
+# Recursion:
+def missing_find(num_1, num_2, num_3=[]):
+    if len(num_1) == 0:
+        return num_3
+    if num_1[0] not in num_2:
+        num_3.append(num_1[0])
+    return missing_find(num_1[1:], num_2, num_3)
+
+
+one_list = []
+print(missing_find(first_list, second_list, one_list))
 

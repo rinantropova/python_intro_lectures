@@ -10,20 +10,46 @@
 # 300           220 284
 
 
-def sum_divisors(num):
-    sum = 0
-    for k in range(1, num // 2 + 1):
-        if num % k == 0:
-            sum += k
-    return sum
+# def sum_divisors(num):
+#     sum = 0
+#     for k in range(1, num // 2 + 1):
+#         if num % k == 0:
+#             sum += k
+#     return sum
+#
+#
+# def find_pairs(k):
+#     for i in range(1, k):
+#         j = sum_divisors(i)
+#         if i < j <= k and i == sum_divisors(j):
+#             print(i, j)
+#
+#
+# k = int(input('Enter number k: '))
+# find_pairs(k)
 
 
-def find_pairs(k):
-    for i in range(1, k):
-        j = sum_divisors(i)
-        if i < j <= k and i == sum_divisors(j):
-            print(i, j)
+# Seminar solution:
+k = 1000
 
 
-k = int(input('Enter number k: '))
-find_pairs(k)
+def get_sum(n):
+    new_sum = 1
+    for elem in range(2, n):
+        if n % elem == 0:
+            new_sum += elem
+    return new_sum
+
+
+def fill_array(k):
+    res = list()
+    for n in range(1, k+1):
+        if n not in res:
+            m = get_sum(n)
+            if n == get_sum(m) and m != n:
+                res.append(m)
+                res.append(n)
+    return res
+
+print(fill_array(k))
+

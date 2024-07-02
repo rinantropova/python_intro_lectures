@@ -9,3 +9,20 @@
 # Ввод:                                         Вывод:
 # пара-ра-рам рам-пам-папам па-ра-па-дам        Парам пам-пам
 
+poem = 'пара-ра-рам рам-пам-папам па-ра-па-дам'.split()
+
+def count_vowels(words):
+    vowels = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ'
+    return sum(1 for char in word if char in vowels)
+
+vowels = []
+for word in poem:
+    vowel_count = count_vowels(poem)
+    vowels.append(vowel_count)
+
+print(vowels)
+
+if all(x == vowels[0] for x in vowels):
+    print('Парам пам-пам')
+else:
+    print('Пам парам')

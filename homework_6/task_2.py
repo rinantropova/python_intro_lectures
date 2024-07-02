@@ -33,3 +33,13 @@ def find_index_rec(one_list, min_d, max_d, index=0, new_list=None):
 
 
 print(find_index_rec(array, -5, 0))
+
+
+def find_index2(one_list, min_d, max_d):
+    for i in range(0, len(one_list)):
+        if min_d <= one_list[i] <= max_d:
+            print(i)
+    # return new_list
+
+
+find_index2(array, -5, 0)

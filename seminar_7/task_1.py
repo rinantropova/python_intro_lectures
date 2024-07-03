@@ -11,7 +11,7 @@
 # копией values.
 # Ввод:
 # values = [1, 23, 42, ‘asdfg’]
-# transformed_values = list(map(trasformation, values))
+# transformed_values = list(map(transformation, values))
 # if values == transformed_values:
 #  print(‘ok’)
 # else:
@@ -20,9 +20,23 @@
 # ok
 
 transformation = lambda x: x
+
 values = [1, 23, 42, 'asdfg']
 transformed_values = list(map(transformation, values))
 if values == transformed_values:
     print('ok')
 else:
     print('fail')
+
+
+# Seminar's:
+def func(a, b):
+    return a ** b
+
+
+print(func(2, 4))
+
+func_2 = lambda a, b: a ** b
+print(func_2(2, 4))
+
+print((lambda a, b: a ** b)(2, 4))  # anonymous function

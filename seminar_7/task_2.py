@@ -16,7 +16,7 @@
 
 from math import pi
 
-orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]  # list of tuples
 
 # simple solution
 square_area = []
@@ -24,7 +24,7 @@ for i in range(0, len(orbits)):
     if orbits[i][0] != orbits[i][1]:
         s = pi * orbits[i][0] * orbits[i][1]
         square_area.append(s)
-print(square_area)
+# print(square_area)
 
 max_orbit = 0
 index = 0
@@ -60,10 +60,19 @@ def find_farthest_orbit2(list_of_orbits):
                key=lambda x: pi * x[0] * x[1],
                default=None)
 
+
 print(find_farthest_orbit2(orbits))
 
 
+# seminar's:
+# lst = [1, 3, 3, 5]
+# print(max(lst, key=lst.count))
 
+def find_farthest_orbit3(orbits):
+    return max((orbit for orbit in orbits if orbit[0] != orbit[1]), key=lambda orbit: pi * orbit[0] * orbit[1])
+
+
+print(find_farthest_orbit3(orbits))
 
 
 

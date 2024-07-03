@@ -30,3 +30,15 @@ if same_by(lambda x: x % 2, values):
     print('‘same’')
 else:
     print('‘different’')
+
+
+# seminar's:
+def same_by2(characteristic, objects):
+    return len(set(map(characteristic, objects))) < 2
+
+
+values2 = [0, 2, 10, 6]
+if same_by2(lambda x: x % 2, values2):
+    print('‘same’')
+else:
+    print('‘different’')

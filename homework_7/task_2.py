@@ -14,11 +14,14 @@
 
 
 def print_operation_table(operation, num_rows=6, num_columns=6):
-    for i in range(1, num_rows+1):
-        for j in range(1, num_columns+1):
-            print(operation(i, j), end=' ')
-        print('\n')
+    if num_rows <= 2:
+        print('ОШИБКА! Размерности таблицы должны быть больше 2!')
+    else:
+        for i in range(1, num_rows + 1):
+            for j in range(1, num_columns + 1):
+                print(operation(i, j), end=' ')
+            print()
 
 
-print_operation_table(lambda x, y: x * y)
+print_operation_table(lambda x, y: x * y, 2, 2)
 

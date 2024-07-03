@@ -26,3 +26,28 @@ if all(x == vowels[0] for x in vowels):
     print('Парам пам-пам')
 else:
     print('Пам парам')
+
+
+# 2
+stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дм'
+words = stroka.split()
+
+
+def vowels_counter(word):
+    vowels = 'аеёиоуыэюяАЕЁИОУЫЭЮЯ'
+    return sum(1 for char in word if char in vowels)
+
+
+def vowels_check(words):
+    if len(words) <= 1:
+        print('Количество фраз должно быть больше одной!')
+        return
+
+    vowels_lst = [vowels_counter(word) for word in words]
+
+    if all(x == vowels_lst[0] for x in vowels_lst):
+        print('Парам пам-пам')
+    else:
+        print('Пам парам')
+
+vowels_check(words)

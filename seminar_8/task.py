@@ -5,9 +5,11 @@
 # 3. Пользователь может ввести одну из характеристик для поиска определенной записи(Например имя или фамилию
 # человека)
 # 4. Использование функций. Ваша программа не должна быть линейной
-
+import os
+import shutil
 from csv import DictWriter, DictReader
 from os.path import exists
+from shutil import copy2
 
 
 class NameError(Exception):
@@ -94,17 +96,17 @@ def copy_to_file(file_name, new_file_name):
         print('Invalid row number')
         return
     row_to_copy = res[row_num - 1]
-    with open(new_file_name, 'w', encoding='utf-8') as new_data:
+    if not exists(new_file_name):
+        with open(new_file_name, 'w', encoding='utf-8') as new_data:
+            f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
+            f_w.writeheader()
+    with open(new_file_name, 'a', encoding='utf-8') as new_data:
         f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
-        f_w.writeheader()
         f_w.writerow(row_to_copy)
 
 
-# I was thinking to use shutil module, but it seems like this module is more useful for copying the whole file. I
-# checked, that it's also possible to use it here, but first I'll have to copy the whole file to the new one and then
-# overwrite the new file with the input row. Chosen by me approach seems to me more suitable for the task to copy only
-# one row (there is no any implication in the task that I should preserve metadata of the original file in the new
-# one as well).
+# I didn't get if it is supposed to overwrite everytime I try to copy a row or not, so I made it in a way rows are
+# added to the previously copied ones.
 
 
 def main():  # main function, as a supervisor, initiates all the actions, that can be done with a file

@@ -98,13 +98,13 @@ def copy_to_file(file_name, new_file_name):
         f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
         f_w.writeheader()
         f_w.writerow(row_to_copy)
+
+
 # I was thinking to use shutil module, but it seems like this module is more useful for copying the whole file. I
 # checked, that it's also possible to use it here, but first I'll have to copy the whole file to the new one and then
 # overwrite the new file with the input row. Chosen by me approach seems to me more suitable for the task to copy only
 # one row (there is no any implication in the task that I should preserve metadata of the original file in the new
 # one as well).
-
-
 
 
 def main():  # main function, as a supervisor, initiates all the actions, that can be done with a file

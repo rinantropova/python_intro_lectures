@@ -87,7 +87,23 @@ def update_row(file_name):
     standard_write(file_name, res)
 
 
-file_name = 'phone.csv'
+def copy_to_file(file_name, new_file_name):
+    row_num = int(input('Enter a row number to copy to a new file: '))
+    res = read_file(file_name)
+    if row_num <= 0 or row_num > len(res):
+        print('Invalid row number')
+        return
+    row_to_copy = res[row_num - 1]
+    with open(new_file_name, 'w', encoding='utf-8') as new_data:
+        f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
+        f_w.writeheader()
+        f_w.writerow(row_to_copy)
+# I was thinking to use shutil module, but it seems like it's more useful for copying the whole file. I checked, that
+# it's also possible to use it here, but first I'll have to copy the whole file to the new one and then overwrite the
+# new file with the input row. Chosen by me approach seems to me more suitable for the task to copy only one row (there
+# is no any implication in the task that I should preserve metadata of the original file in the new one as well).
+
+
 
 
 def main():  # main function, as a supervisor, initiates all the actions, that can be done with a file
@@ -119,6 +135,13 @@ def main():  # main function, as a supervisor, initiates all the actions, that c
                 print('File does not exist, please create a file with command w.')
                 continue
             update_row(file_name)
+        elif command == 'c':
+            if not exists(file_name):
+                print('File does not exist, please create a file with command w.')
+                continue
+            copy_to_file(file_name, new_file_name)
 
 
+file_name = 'phone.csv'
+new_file_name = 'copy.csv'
 main()

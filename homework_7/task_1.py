@@ -51,3 +51,8 @@ def vowels_check(words):
         print('Пам парам')
 
 vowels_check(words)
+
+
+import sys
+
+print(sys.executable)

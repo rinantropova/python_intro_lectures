@@ -113,7 +113,7 @@ def copy_to_file(file_name, new_file_name):
 # content with metadata, using 'shutil.copy2' method. Applying to the current task, then I would have needed to copy
 # the whole file and then
 # overwrite it with the chosen row. But in this case I wasn't sure how to implement the approach when we save
-# previously copied rows and add newly copied rows in the end of the list.
+# previously copied rows and add newly copied rows in the end of the list
 
 
 def main():  # main function, as a supervisor, initiates all the actions, that can be done with a file

@@ -99,9 +99,7 @@ def copy_to_file(file_name, new_file_name):
         return
     row_to_copy = res[row_num - 1]
     if not exists(new_file_name):
-        with open(new_file_name, 'w', encoding='utf-8') as new_data:
-            f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
-            f_w.writeheader()
+        create_file(new_file_name)
     with open(new_file_name, 'a', encoding='utf-8') as new_data:
         f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
         f_w.writerow(row_to_copy)

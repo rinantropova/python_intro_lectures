@@ -92,16 +92,19 @@ def update_row(file_name):
 
 def copy_to_file(file_name, new_file_name):
     row_num = int(input('Enter a row number to copy to a new file: '))
-    res = read_file(file_name)
-    if row_num <= 0 or row_num > len(res):
-        print('Invalid row number')
-        return
-    row_to_copy = res[row_num - 1]
-    if not exists(new_file_name):
-        create_file(new_file_name)
-    with open(new_file_name, 'a', encoding='utf-8') as new_data:
-        f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
-        f_w.writerow(row_to_copy)
+    res_1 = read_file(file_name)
+    res_2 = read_file(new_file_name)
+    res_2.append(res_1[row_num - 1])
+    standard_write(new_file_name, res_2)
+    # if row_num <= 0 or row_num > len(res):
+    #     print('Invalid row number')
+    #     return
+    # row_to_copy = res[row_num - 1]
+    # if not exists(new_file_name):
+    #     create_file(new_file_name)
+    # with open(new_file_name, 'a', encoding='utf-8') as new_data:
+    #     f_w = DictWriter(new_data, fieldnames=['First name', 'Last name', 'Phone number'])
+    #     f_w.writerow(row_to_copy)
 
 
 def main():  # main function, as a supervisor, initiates all the actions, that can be done with a file

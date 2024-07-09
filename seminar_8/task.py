@@ -104,15 +104,6 @@ def copy_to_file(file_name, new_file_name):
         f_w.writerow(row_to_copy)
 
 
-# I didn't get if it is supposed to be overwritten everytime I try to copy a row or not, so I've made it in a way rows
-# are added to the previously copied ones.
-# I was also thinking about shutil module, but as I understand it, this module is used for copying the entire file
-# content with metadata, using 'shutil.copy2' method. Applying to the current task, then I would have needed to copy
-# the whole file and then
-# overwrite it with the chosen row. But in this case I wasn't sure how to implement the approach when we save
-# previously copied rows and add newly copied rows in the end of the list
-
-
 def main():  # main function, as a supervisor, initiates all the actions, that can be done with a file
     while True:
         command = input('Enter a command: ')
